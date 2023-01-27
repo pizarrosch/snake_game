@@ -4,7 +4,53 @@ body {
 }
 
 .main-container {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+.game_field {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+}
+
+.counter-container {
+  width: 10em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: center;
+  margin-bottom: 8px;
+}
+
+p {
+  margin: auto 0;
+}
+
+.counter {
+  width: 30%;
+  border: 1px cornflowerblue solid;
+  border-radius: 4px;
+  text-align: center;
+  padding: 5px;
+  color: cornflowerblue;
+  font-weight: bold;
+}
+
+.best_counter {
+  border: 1px orange solid;
+  color: orange;
+}
+
+.actScoreContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.bestScoreContainer {
+  display: flex;
+  gap: 3px;
+  font-size: 12px;
+  justify-content: center;
 }
 
 .table {
@@ -18,7 +64,7 @@ body {
   border-bottom: none;
 }
 
-.cell:not(:last-child) {
+.cell:not(:nth-child(10n + 10)) {
   border-right: none;
 }
 
