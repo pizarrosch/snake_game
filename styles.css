@@ -66,6 +66,7 @@ p {
   background-color: bisque;
   font-weight: bold;
   cursor: pointer;
+  outline: none;
 }
 
 .cell {

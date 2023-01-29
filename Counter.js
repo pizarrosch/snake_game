@@ -12,9 +12,14 @@ class Counter {
   render() {
     mainCounter.innerHTML = this.score;
     recordCounter.innerHTML = localStorage.getItem('bestScore');
+
     if (!localStorage.hasOwnProperty('bestScore')) {
       recordCounter.innerHTML = this.bestScore;
     }
+
+
+
+    this.clearRecord();
   }
 
   updateActualScore() {
@@ -22,12 +27,12 @@ class Counter {
   }
 
   updateBestScore() {
-      if (this.score < localStorage.getItem('bestScore')) {
-        recordCounter.innerHTML = localStorage.getItem('bestScore');
-      } else {
-        localStorage.setItem('bestScore', this.score);
-        recordCounter.innerHTML = localStorage.getItem('bestScore');
-      }
+    if (this.score < localStorage.getItem('bestScore')) {
+      recordCounter.innerHTML = localStorage.getItem('bestScore');
+    } else {
+      localStorage.setItem('bestScore', this.score);
+      recordCounter.innerHTML = localStorage.getItem('bestScore');
+    }
   }
 
   reset() {
@@ -38,6 +43,13 @@ class Counter {
   resetRecord() {
     localStorage.clear();
     recordCounter.innerHTML = this.bestScore;
+  }
+
+  clearRecord() {
+    const button = document.querySelector('.button');
+    button.onclick = () => {
+      this.resetRecord();
+    }
   }
 }
 
