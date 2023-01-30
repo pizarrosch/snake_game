@@ -16,9 +16,9 @@ class Game {
   start() {
     this.render();
     snake.start();
+    counter.clearRecord();
   }
 }
 
 let game = new Game();
 game.start();
-

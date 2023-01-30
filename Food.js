@@ -24,9 +24,10 @@ class Food {
     }
 
     if (this.food === snake.snakeBody[0]) {
+      snake.snakeBody.push(document.querySelector('[posX= "' + snake.coordinates[1] + '"][posY= "' + (snake.coordinates[1]) + '"]'));
       counter.updateActualScore();
       counter.render()
-      snake.snakeBody.push(document.querySelector('[posX= "' + snake.coordinates[1] + '"][posY= "' + (snake.coordinates[1]) + '"]'));
+
       this.food.classList.remove('green');
 
       let newFoodCoordinates = setNewFoodCoordinates();

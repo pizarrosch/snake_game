@@ -1,11 +1,13 @@
 class Field {
 
+  gameField;
+
   render() {
-    let gameField = document.querySelector('.game_field');
+    this.gameField = document.querySelector('.game_field');
     for (let i = 0; i < 100; i++) {
       let cell = document.createElement('div');
       cell.classList.add('cell');
-      gameField.append(cell)
+      this.gameField.append(cell)
 
       let x = 0;
       let y = 9;

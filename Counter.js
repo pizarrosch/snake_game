@@ -16,10 +16,6 @@ class Counter {
     if (!localStorage.hasOwnProperty('bestScore')) {
       recordCounter.innerHTML = this.bestScore;
     }
-
-
-
-    this.clearRecord();
   }
 
   updateActualScore() {
@@ -40,15 +36,11 @@ class Counter {
     mainCounter.innerHTML = this.score;
   }
 
-  resetRecord() {
-    localStorage.clear();
-    recordCounter.innerHTML = this.bestScore;
-  }
-
   clearRecord() {
     const button = document.querySelector('.button');
     button.onclick = () => {
-      this.resetRecord();
+      localStorage.clear();
+      recordCounter.innerHTML = this.bestScore;
     }
   }
 }
