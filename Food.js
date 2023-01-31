@@ -23,7 +23,7 @@ class Food {
       return [positionX, positionY];
     }
 
-    if (this.food === snake.snakeBody[0]) {
+    if (snake.snakeBody[0] === this.food) {
       snake.snakeBody.push(document.querySelector('[posX= "' + snake.coordinates[1] + '"][posY= "' + (snake.coordinates[1]) + '"]'));
       counter.updateActualScore();
       counter.render()

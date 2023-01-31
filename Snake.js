@@ -7,7 +7,6 @@ class Snake {
   #exitButton;
   gameOver;
 
-
   render() {
     function setSnakeCoordinates() {
       let positionX = 4;
@@ -130,8 +129,6 @@ class Snake {
         theFood.eat();
       }, 500);
     })
-
-
   }
 }
 
